@@ -1,15 +1,27 @@
+/* Theme detection */
+:root {
+    --primary-color: #000000;
+    --background-color: #ffffff;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --primary-color: #ffffff;
+      --background-color: #000000;
+    }
+  }
+
 /* General Styles */
 body {
-    font-family: 'Exo 2', sans-serif;
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
     margin: 0;
-    padding: 0;
+    padding: 3vw;
     transition: background 0.3s, color 0.3s;
-}
-
-/* Dark Mode */
-.dark-mode {
-    background: #222;
-    color: white;
+    background-color: var(--background-color);
+    color: var(--primary-color);
 }
 
 /* Navbar */
@@ -54,25 +66,6 @@ nav ul li a:hover {
     color: white;
 }
 
-/* Theme Toggle Button */
-#theme-toggle {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 8px;
-    color: white;
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: transform 0.3s ease-in-out;
-}
-
-#theme-toggle:hover {
-    transform: translateY(-50%) scale(1.2);
-}
-
 /* Responsive Navbar */
 .menu-toggle {
     display: none;
@@ -112,11 +105,5 @@ nav ul li a:hover {
 
     .menu-toggle {
         display: block;
-    }
-
-    /* Adjust theme toggle for mobile */
-    #theme-toggle {
-        right: 10px;
-        font-size: 20px;
     }
 }
