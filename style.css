@@ -1,24 +1,4 @@
-/* Import Exo 2 font */
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap');
-
-/* Global Styles */
-body {
-    font-family: 'Exo 2', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    transition: background-color 0.3s, color 0.3s;
-    padding-top: 60px;
-}
-
-/* Dark Mode */
-body.dark-mode {
-    background-color: #222;
-    color: #f4f4f4;
-}
-
-/* Navbar Styles */
+/* Navbar */
 nav {
     background: rgba(51, 51, 51, 0.9);
     padding: 10px 20px;
@@ -69,13 +49,14 @@ nav ul li a:hover {
     padding: 10px;
     color: white;
     transition: transform 0.3s ease-in-out;
+    margin-left: auto;
 }
 
 #theme-toggle:hover {
     transform: scale(1.2);
 }
 
-/* Responsive Navbar for Small Screens */
+/* Responsive Navbar */
 .menu-toggle {
     display: none;
     font-size: 24px;
@@ -86,6 +67,7 @@ nav ul li a:hover {
     padding: 10px;
 }
 
+/* Responsive Design */
 @media screen and (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -121,23 +103,4 @@ nav ul li a:hover {
         right: 15px;
         top: 10px;
     }
-}
-
-/* Main Content */
-main {
-    padding: 20px;
-    text-align: center;
-}
-
-h1, h2 {
-    font-weight: 700;
-}
-
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
 }
