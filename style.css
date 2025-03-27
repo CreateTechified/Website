@@ -1,6 +1,7 @@
 /* Import Exo 2 font */
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap');
 
+/* Global Styles */
 body {
     font-family: 'Exo 2', sans-serif;
     margin: 0;
@@ -8,24 +9,31 @@ body {
     background-color: #f4f4f4;
     color: #333;
     transition: background-color 0.3s, color 0.3s;
+    padding-top: 60px; /* Prevent content from going under navbar */
 }
 
-/* Dark mode */
+/* Dark Mode */
 body.dark-mode {
     background-color: #222;
     color: #f4f4f4;
 }
 
-/* Header and Navbar */
-header {
+/* Navbar Styles */
+nav {
+    background: rgba(51, 51, 51, 0.9);
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    color: white;
-    padding: 15px 20px;
 }
 
+/* Navigation Links */
 nav ul {
     list-style: none;
     margin: 0;
@@ -40,12 +48,16 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: white;
+    font-size: 18px;
     font-weight: bold;
-    transition: color 0.3s;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
 }
 
 nav ul li a:hover {
-    color: #007bff;
+    background: #007bff;
+    color: white;
 }
 
 /* Theme Toggle Button */
@@ -61,6 +73,42 @@ nav ul li a:hover {
 
 #theme-toggle:hover {
     background-color: #0056b3;
+}
+
+/* Responsive Navbar for Small Screens */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        background: rgba(51, 51, 51, 0.95);
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        display: none;
+        padding: 10px 0;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
 }
 
 /* Main Content */

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Create Techified</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div id="navbar"></div>
+        <button id="theme-toggle">Toggle Theme</button>
+    </header>
+    <main>
+        <h2>Contact</h2>
+        <p>Join our <a href="#">Discord</a> or check out our <a href="#">GitHub</a>!</p>
+    </main>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('navbar').innerHTML = data);
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download - Create Techified</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="/assets/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div id="navbar"></div>
+        <button id="theme-toggle">Toggle Theme</button>
+    </header>
+    <main>
+        <h2>Download</h2>
+        <p>Download the modpack from <a href="#">CurseForge</a> or <a href="#">Modrinth</a>.</p>
+    </main>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('navbar').innerHTML = data);
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

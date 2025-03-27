@@ -1,25 +1,25 @@
- <!DOCTYPE html>
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create: Techified | hey there</title>
-    <link rel="stylesheet" href=".css" />
-    <link rel="icon" type="image/x-icon" href="/assets/icon.png">
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Figtree">
-    <style>
-      body {
-        background-color: black;
-        font-family: 'Exo 2', serif;
-        font-size: 20px;
-        color: white;
-      }
-    </style>
-  </head>
+    <title>Team - Create Techified</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-  <h1>meet the team</h1>
-  <p>site in progress, html is shit</p>
-  <script src="team.js"></script>
+    <header>
+        <div id="navbar"></div>
+        <button id="theme-toggle">Toggle Theme</button>
+    </header>
+    <main>
+        <h2>Meet the Team</h2>
+        <p>Coming soon...</p>
+    </main>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('navbar').innerHTML = data);
+    </script>
+    <script src="script.js"></script>
 </body>
-</html> 
+</html>
