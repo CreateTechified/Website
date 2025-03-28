@@ -18,7 +18,8 @@ body {
     font-weight: 400;
     font-style: normal;
     margin: 0;
-    padding: 3vw;
+    padding-left: 2vw;
+    padding-top: 70px;
     transition: background 0.3s, color 0.3s;
     background-color: var(--background-color);
     color: var(--primary-color);
@@ -37,6 +38,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 3vw;
 }
 
 /* Navigation Links */
