@@ -1,20 +1,27 @@
+/* Theme detection */
+:root {
+    --primary-color: #000000;
+    --background-color: #ffffff;
+}
+  
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #ffffff;
+        --background-color: #000000;
+    }
+}
+
 /* General Styles */
 body {
-    font-family: 'Exo 2', sans-serif;
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
     margin: 0;
-    padding: 0;
+    padding-top: 70px; /* Ensures content doesn't go behind navbar */
     transition: background 0.3s, color 0.3s;
-}
-
-/* Prevent Content from Going Behind Navbar */
-body {
-    padding-top: 60px; /* Adjust to match navbar height */
-}
-
-/* Dark Mode */
-.dark-mode {
-    background: #222;
-    color: white;
+    background-color: var(--background-color);
+    color: var(--primary-color);
 }
 
 /* Navbar */
@@ -23,14 +30,14 @@ nav {
     padding: 10px 20px;
     position: fixed;
     width: 100%;
-    height: 60px; /* Fixed height */
+    height: 60px;
     top: 0;
     left: 0;
     z-index: 1000;
     backdrop-filter: blur(10px);
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 
 /* Navigation Links */
@@ -42,15 +49,15 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: white;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
-    padding: 8px 12px;
+    padding: 8px 15px;
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
 }
@@ -68,18 +75,20 @@ nav ul li a:hover {
     cursor: pointer;
     padding: 8px;
     color: white;
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
     transition: transform 0.3s ease-in-out;
 }
 
 #theme-toggle:hover {
-    transform: translateY(-50%) scale(1.2);
+    transform: scale(1.2);
 }
 
-/* Mobile Navbar */
+#theme-icon {
+    font-size: 24px;
+}
+
+/* Responsive Navbar */
 .menu-toggle {
     display: none;
     font-size: 24px;
@@ -90,7 +99,7 @@ nav ul li a:hover {
     padding: 10px;
 }
 
-/* Responsive Navbar */
+/* Responsive Design */
 @media screen and (max-width: 768px) {
     nav {
         flex-direction: row;
@@ -98,18 +107,14 @@ nav ul li a:hover {
         padding: 10px;
     }
 
-    .menu-toggle {
-        display: block;
-    }
-
     nav ul {
-        display: none;
         flex-direction: column;
+        background: rgba(51, 51, 51, 0.95);
         position: absolute;
         top: 60px;
         left: 0;
         width: 100%;
-        background: rgba(51, 51, 51, 0.95);
+        display: none;
         padding: 10px 0;
     }
 
@@ -120,6 +125,10 @@ nav ul li a:hover {
     nav ul li {
         text-align: center;
         padding: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
     }
 
     /* Adjust theme toggle for mobile */
