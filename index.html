@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Techified</title>
-    <link rel="icon" type="image/x-icon" href="/assets/icon.png" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
+    <link rel="icon" type="image/x-icon" href="/assets/icon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
     <header>
-      <div id="navbar"></div>
+        <div id="navbar"></div>
     </header>
     <main>
-      <section>
-        <h2>About the Modpack</h2>
-        <p>Coming soon <3</p>
-      </section>
+        <section>
+            <h2>About the Modpack</h2>
+            <p>Coming soon <3</p>
+        </section>
     </main>
     <script>
-      fetch("navbar.html")
-        .then((response) => response.text())
-        .then((data) => (document.getElementById("navbar").innerHTML = data));
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('navbar').innerHTML = data);
     </script>
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
