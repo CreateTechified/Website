@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/assets/icon.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/assets/icon.png" />
     <title>Team - Create Techified</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="team.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="team.css" />
+  </head>
+  <body>
     <header>
-        <div id="navbar"></div>
+      <div id="navbar"></div>
     </header>
     <body>
-        <h2>Meet the Team</h2>
-        <p>No, not the video series based on Team Fortress 2 by Valve Corporation.<br>These people made the modpack you play :)<br><br><br></p>
-        <p>Currently, this list consists of two people.<br><br>pineapple<br>wrldmap<br><br><br><br><br><br></p>
-        <p>I'll add fancy CSS and JS stuff later, just let me work on the modpack for a bit, eh?</p>
-        <p>This entire page is pretty much just basic html lmao</p>
+      <h2>Meet the Team</h2>
+      <p>
+        No, not the video series based on Team Fortress 2 by Valve
+        Corporation.<br />These people made the modpack you play :)<br /><br /><br />
+      </p>
+      <p>
+        Currently, this list consists of two people.<br /><br />pineapple<br />wrldmap<br /><br /><br /><br /><br /><br />
+      </p>
+      <p>
+        I'll add fancy CSS and JS stuff later, just let me work on the modpack
+        for a bit, eh?
+      </p>
+      <p>This entire page is pretty much just basic html lmao</p>
     </body>
     <script>
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('navbar').innerHTML = data);
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => (document.getElementById("navbar").innerHTML = data));
     </script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
