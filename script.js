@@ -23,14 +23,13 @@ function initializeThemeToggle() {
   const themeToggle = document.getElementById("theme-toggle");
   const themeIcon = document.getElementById("theme-icon");
 
-  if (!themeToggle) return; // Prevent errors if the button isn't found
+  if (!themeToggle) return;
 
-  // Load saved theme
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode");
-    themeIcon.textContent = "☀️"; // Sun icon for light mode
+    themeIcon.textContent = "☀️";
   } else {
-    themeIcon.textContent = "🌙"; // Moon icon for dark mode
+    themeIcon.textContent = "🌙";
   }
 
   themeToggle.addEventListener("click", () => {
@@ -62,16 +61,15 @@ function checkNavbarOverflow() {
 
   if (!nav || !menuToggle || !navLinks) return;
 
-  // Check if the nav items fit inside the navbar
   const navWidth = nav.clientWidth;
-  const linksWidth = navLinks.scrollWidth + 100; // Add buffer space
+  const linksWidth = navLinks.scrollWidth + 100;
 
   if (linksWidth > navWidth) {
-    menuToggle.style.display = "block"; // Show hamburger menu
-    navLinks.classList.add("mobile"); // Ensure proper styling
+    menuToggle.style.display = "block";
+    navLinks.classList.add("mobile");
   } else {
-    menuToggle.style.display = "none"; // Hide hamburger menu
+    menuToggle.style.display = "none";
     navLinks.classList.remove("mobile");
-    navLinks.classList.remove("active"); // Ensure the dropdown is hidden on resize
+    navLinks.classList.remove("active");
   }
 }

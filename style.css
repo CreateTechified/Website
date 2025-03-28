@@ -1,27 +1,11 @@
-/* Theme detection */
-:root {
-    --primary-color: #000000;
-    --background-color: #ffffff;
-}
-  
-@media (prefers-color-scheme: dark) {
-    :root {
-        --primary-color: #ffffff;
-        --background-color: #000000;
-    }
-}
-
 /* General Styles */
 body {
     font-family: "Exo 2", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
     margin: 0;
     padding-top: 70px; /* Prevents content from going behind navbar */
-    transition: background 0.3s, color 0.3s;
     background-color: var(--background-color);
     color: var(--primary-color);
+    transition: background 0.3s, color 0.3s;
 }
 
 /* Navbar */
@@ -38,7 +22,6 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: height 0.3s ease-in-out;
 }
 
 /* Navigation Links */
@@ -47,6 +30,7 @@ nav {
     margin: 0;
     padding: 0;
     display: flex;
+    align-items: center;
 }
 
 .nav-links li {
@@ -68,7 +52,7 @@ nav {
     color: white;
 }
 
-/* Theme Toggle Button */
+/* Theme Toggle */
 #theme-toggle {
     background: none;
     border: none;
@@ -76,20 +60,9 @@ nav {
     cursor: pointer;
     padding: 8px;
     color: white;
-    display: flex;
-    align-items: center;
-    transition: transform 0.3s ease-in-out;
 }
 
-#theme-toggle:hover {
-    transform: scale(1.2);
-}
-
-#theme-icon {
-    font-size: 24px;
-}
-
-/* Hamburger Menu (Hidden on Desktop) */
+/* Hamburger Menu */
 .menu-toggle {
     display: none;
     font-size: 30px;
@@ -100,7 +73,7 @@ nav {
     padding: 10px;
 }
 
-/* Responsive Design */
+/* Mobile Styles */
 @media screen and (max-width: 768px) {
     nav {
         flex-direction: row;
@@ -108,7 +81,7 @@ nav {
         padding: 10px;
     }
 
-    /* Hide normal menu and show hamburger */
+    /* Hide normal menu and show dropdown */
     .nav-links {
         flex-direction: column;
         background: rgba(51, 51, 51, 0.95);
@@ -118,15 +91,11 @@ nav {
         width: 100%;
         display: none;
         padding: 10px 0;
-        opacity: 0;
-        transform: translateY(-10px);
-        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
     }
 
     .nav-links.active {
         display: flex;
-        opacity: 1;
-        transform: translateY(0);
+        flex-direction: column;
     }
 
     .nav-links li {
@@ -138,8 +107,8 @@ nav {
         display: block;
     }
 
-    /* Adjust theme toggle for mobile */
-    #theme-toggle {
-        font-size: 20px;
+    /* Fix content overlapping */
+    body {
+        padding-top: 80px;
     }
 }
