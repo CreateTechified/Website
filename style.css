@@ -18,7 +18,7 @@ body {
     font-weight: 400;
     font-style: normal;
     margin: 0;
-    padding-top: 70px; /* Ensures content doesn't go behind navbar */
+    padding-top: 70px; /* Prevents content from going behind navbar */
     transition: background 0.3s, color 0.3s;
     background-color: var(--background-color);
     color: var(--primary-color);
@@ -38,21 +38,22 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: height 0.3s ease-in-out;
 }
 
 /* Navigation Links */
-nav ul {
+.nav-links {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
 }
 
-nav ul li {
+.nav-links li {
     margin: 0 15px;
 }
 
-nav ul li a {
+.nav-links li a {
     text-decoration: none;
     color: white;
     font-size: 18px;
@@ -62,7 +63,7 @@ nav ul li a {
     transition: all 0.3s ease-in-out;
 }
 
-nav ul li a:hover {
+.nav-links li a:hover {
     background: #007bff;
     color: white;
 }
@@ -88,10 +89,10 @@ nav ul li a:hover {
     font-size: 24px;
 }
 
-/* Responsive Navbar */
+/* Hamburger Menu (Hidden on Desktop) */
 .menu-toggle {
     display: none;
-    font-size: 24px;
+    font-size: 30px;
     color: white;
     background: none;
     border: none;
@@ -107,7 +108,8 @@ nav ul li a:hover {
         padding: 10px;
     }
 
-    nav ul {
+    /* Hide normal menu and show hamburger */
+    .nav-links {
         flex-direction: column;
         background: rgba(51, 51, 51, 0.95);
         position: absolute;
@@ -116,13 +118,18 @@ nav ul li a:hover {
         width: 100%;
         display: none;
         padding: 10px 0;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
     }
 
-    nav ul.active {
+    .nav-links.active {
         display: flex;
+        opacity: 1;
+        transform: translateY(0);
     }
 
-    nav ul li {
+    .nav-links li {
         text-align: center;
         padding: 10px 0;
     }
@@ -133,7 +140,6 @@ nav ul li a:hover {
 
     /* Adjust theme toggle for mobile */
     #theme-toggle {
-        right: 15px;
         font-size: 20px;
     }
 }
