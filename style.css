@@ -1,11 +1,27 @@
+/* Theme detection */
+:root {
+    --primary-color: #000000;
+    --background-color: #ffffff;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --primary-color: #ffffff;
+      --background-color: #000000;
+    }
+  }
+
 /* General Styles */
 body {
     font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
     margin: 0;
-    padding-top: 70px; /* Prevents content from going behind navbar */
+    padding: 3vw;
+    transition: background 0.3s, color 0.3s;
     background-color: var(--background-color);
     color: var(--primary-color);
-    transition: background 0.3s, color 0.3s;
 }
 
 /* Navbar */
@@ -14,7 +30,6 @@ nav {
     padding: 10px 20px;
     position: fixed;
     width: 100%;
-    height: 60px;
     top: 0;
     left: 0;
     z-index: 1000;
@@ -25,19 +40,18 @@ nav {
 }
 
 /* Navigation Links */
-.nav-links {
+nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    align-items: center;
 }
 
-.nav-links li {
+nav ul li {
     margin: 0 15px;
 }
 
-.nav-links li a {
+nav ul li a {
     text-decoration: none;
     color: white;
     font-size: 18px;
@@ -47,25 +61,15 @@ nav {
     transition: all 0.3s ease-in-out;
 }
 
-.nav-links li a:hover {
+nav ul li a:hover {
     background: #007bff;
     color: white;
 }
 
-/* Theme Toggle */
-#theme-toggle {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 8px;
-    color: white;
-}
-
-/* Hamburger Menu */
+/* Responsive Navbar */
 .menu-toggle {
     display: none;
-    font-size: 30px;
+    font-size: 24px;
     color: white;
     background: none;
     border: none;
@@ -73,42 +77,33 @@ nav {
     padding: 10px;
 }
 
-/* Mobile Styles */
+/* Responsive Design */
 @media screen and (max-width: 768px) {
     nav {
-        flex-direction: row;
-        height: auto;
-        padding: 10px;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    /* Hide normal menu and show dropdown */
-    .nav-links {
+    nav ul {
         flex-direction: column;
         background: rgba(51, 51, 51, 0.95);
         position: absolute;
-        top: 60px;
+        top: 50px;
         left: 0;
         width: 100%;
         display: none;
         padding: 10px 0;
     }
 
-    .nav-links.active {
+    nav ul.active {
         display: flex;
-        flex-direction: column;
     }
 
-    .nav-links li {
-        text-align: center;
-        padding: 10px 0;
+    nav ul li {
+        margin: 10px 0;
     }
 
     .menu-toggle {
         display: block;
-    }
-
-    /* Fix content overlapping */
-    body {
-        padding-top: 80px;
     }
 }
