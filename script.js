@@ -4,8 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(data => {
             document.getElementById('navbar').innerHTML = data;
             setTimeout(() => {
-                initializeThemeToggle();
-                setupMenuToggle();
+                setupMenuToggle(); // Keep only the menu toggle setup
             }, 100);
         });
 });
@@ -15,33 +14,14 @@ function toggleMenu() {
     document.getElementById("nav-links").classList.toggle("active");
 }
 
-// Function to initialize theme toggle
-function initializeThemeToggle() {
-    const themeToggle = document.getElementById("theme-toggle");
-    const themeIcon = document.getElementById("theme-icon");
-
-    if (!themeToggle) return; // Prevent errors if the button isn't found
-
-    // Load saved theme
-    if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark-mode");
-        themeIcon.textContent = "☀️";
-    }
-
-    themeToggle.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
-
-        if (document.body.classList.contains("dark-mode")) {
-            localStorage.setItem("theme", "dark");
-            themeIcon.textContent = "☀️";
-        } else {
-            localStorage.setItem("theme", "light");
-            themeIcon.textContent = "🌙";
-        }
-    });
-}
-
 // Function to enable mobile menu toggle
 function setupMenuToggle() {
     document.querySelector(".menu-toggle").addEventListener("click", toggleMenu);
 }
+
+const menuToggleButton = document.getElementById('menu-toggle');
+const navList = document.getElementById('nav-list');
+
+menuToggleButton.addEventListener('click', () => {
+  navList.classList.toggle('active');
+});

@@ -1,15 +1,49 @@
 /* Theme detection */
 :root {
-    --primary-color: #000000;
-    --background-color: #ffffff;
-  }
-  
-  @media (prefers-color-scheme: dark) {
+    /* Light Mode Colors */
+    --bg-light: #FFFFFF;
+    --text-primary-light: #333333;
+    --text-secondary-light: #666666;
+    --link-light: #007BFF;
+    --accent-light: #00BFAE;
+    --card-bg-light: #F2F2F2;
+    --border-light: #DDDDDD;
+    --nav-light: #F4F4F4;
+
+
+    /* Dark Mode Colors */
+    --bg-dark: #181818;
+    --text-primary-dark: #E0E0E0;
+    --text-secondary-dark: #B0B0B0;
+    --link-dark: #1E90FF;
+    --accent-dark: #00BFAE;
+    --card-bg-dark: #2A2A2A;
+    --border-dark: #444444;
+    --nav-dark: #333333;
+
+    /* Default theme */
+    --background: var(--bg-light);
+    --primary: var(--text-primary-light);
+    --secondary: var(--text-secondary-light);
+    --link: var(--link-light);
+    --accent: var(--accent-light);
+    --card: var(--card-bg-light);
+    --border: var(--border-light);
+    --nav: var(--nav-light);
+}
+
+@media (prefers-color-scheme: dark) {
     :root {
-      --primary-color: #ffffff;
-      --background-color: #000000;
+        --background: var(--bg-dark);
+        --primary: var(--text-primary-dark);
+        --secondary: var(--text-secondary-dark);
+        --link: var(--link-dark);
+        --accent: var(--accent-dark);
+        --card: var(--card-bg-dark);
+        --border: var(--border-dark);
+        --nav: var(--nav-dark);
     }
-  }
+}
 
 /* General Styles */
 body {
@@ -21,13 +55,13 @@ body {
     padding-left: 2vw;
     padding-top: 70px;
     transition: background 0.3s, color 0.3s;
-    background-color: var(--background-color);
-    color: var(--primary-color);
+    background-color: var(--background);
+    color: var(--primary);
 }
 
 /* Navbar */
 nav {
-    background: rgba(51, 51, 51, 0.9);
+    background: var(--nav);
     padding: 10px 20px;
     position: fixed;
     width: 100%;
@@ -55,7 +89,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: white;
+    color: var(--primary);
     font-size: 18px;
     font-weight: bold;
     padding: 8px 15px;
@@ -64,7 +98,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background: #007bff;
+    background: var(--link);
     color: white;
 }
 
@@ -88,7 +122,7 @@ nav ul li a:hover {
 
     nav ul {
         flex-direction: column;
-        background: rgba(51, 51, 51, 0.95);
+        background: var(--nav);
         position: absolute;
         top: 50px;
         left: 0;
