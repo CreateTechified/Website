@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include heads.html %}
+  <body>
+    <header>
+      <div id="navbar"></div>
+    </header>
+    <main>
+      {{ content }}
+    </main>
+    <script>
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => (document.getElementById("navbar").innerHTML = data));
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

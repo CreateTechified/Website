@@ -1,45 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="/assets/icon.png" />
-    <title>FAQs - Create Techified</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header>
-      <div id="navbar"></div>
-    </header>
-    <main>
-      <h2>FAQs</h2>
-      <p>
-        Will we ever update from 1.19.2? Yes! We are currently planning an update to 1.20.1, or 1.21.1. Depends on mod availability.
-      </p>
-      <br />
-      <p>
-        Is this modpack available on bedrock edition? no you idiot
-      </p>
-      <br />
-      <p>
-        Can i play the modpack on my tv? lets just skip this one
-      </p>
-      <br />
-      <p>
-        How can i beat the modpack? Mitochondria is the powerhouse of the cell
-      </p>
-    </main>
-    <script>
-      fetch("navbar.html")
-        .then((response) => response.text())
-        .then((data) => (document.getElementById("navbar").innerHTML = data));
-    </script>
-    <script src="script.js"></script>
-  </body>
-</html>
+---
+layout: default
+title: FAQs
+---
+
+<h2>FAQs</h2>
+<p>
+  Q: Will we ever update from 1.19.2?<br>
+  A: Yes! We are currently planning an update to 1.20.1, or 1.21.1, depending on mod availability.
+</p>
+<br />
+<p>
+  Q: Is this pack available on Bedrock Edition?<br>
+  A: Well, is FTB Skies? Oh, wait, it is. We aren't though, and will never port to Bugrock.
+</p>
+<br />
+<p>
+  Q: Can I play this pack on my TV?<br>
+  A: Only if you plug your computer into it. But also, modded Minecraft doesn't work well on limited-keybind controllers.
+</p>
+<br />
+<p>
+  Q: How do I beat the modpack?<br>
+  A: Well, you can't yet. But, quests will guide you along your way.
+</p>
