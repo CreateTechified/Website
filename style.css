@@ -2,7 +2,8 @@
 :root {
     /* Light Mode Colors */
     --bg-light: #FFFFFF;
-    --text-primary-light: #FFFFFF;
+    --bg-image: url("assets/gallery2.png");
+    --text-primary-light: #333333;
     --text-secondary-light: #666666;
     --link-light: #007BFF;
     --accent-light: #00BFAE;
@@ -13,6 +14,7 @@
 
     /* Dark Mode Colors */
     --bg-dark: #181818;
+    --bg-image: url("assets/gallery2.png");
     --text-primary-dark: #E0E0E0;
     --text-secondary-dark: #B0B0B0;
     --link-dark: #1ecbff;
@@ -57,13 +59,6 @@ body {
     transition: background 0.3s, color 0.3s;
     background-color: var(--background);
     color: var(--primary);
-
-    /* Background Image*/
-    background-image: url("assets/gallery2.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 /* Navbar */
