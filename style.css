@@ -57,6 +57,13 @@ body {
     transition: background 0.3s, color 0.3s;
     background-color: var(--background);
     color: var(--primary);
+
+    /* Background Image*/
+    background-image: url("assets/gallery2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* Navbar */
