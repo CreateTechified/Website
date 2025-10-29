@@ -2,7 +2,6 @@
 :root {
     /* Light Mode Colors */
     --bg-light: #FFFFFF;
-    --bg-image: url("assets/gallery2.png");
     --text-primary-light: #333333;
     --text-secondary-light: #666666;
     --link-light: #007BFF;
@@ -14,7 +13,6 @@
 
     /* Dark Mode Colors */
     --bg-dark: #181818;
-    --bg-image: url("assets/gallery2.png");
     --text-primary-dark: #E0E0E0;
     --text-secondary-dark: #B0B0B0;
     --link-dark: #1ecbff;
@@ -22,6 +20,10 @@
     --card-bg-dark: #2A2A2A;
     --border-dark: #444444;
     --nav-dark: #333333;
+
+    /*Background for both Light & Dark Mode*/
+    --bg-image-light: url("assets/gallery1.png");
+    --bg-image-dark: url("assets/gallery2.png");
 
     /* Default theme */
     --background: var(--bg-light);
@@ -32,6 +34,7 @@
     --card: var(--card-bg-light);
     --border: var(--border-light);
     --nav: var(--nav-light);
+    --bg-image: var(--bg-image-light);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -44,6 +47,7 @@
         --card: var(--card-bg-dark);
         --border: var(--border-dark);
         --nav: var(--nav-dark);
+        --bg-image: var(--bg-image-dark);
     }
 }
 
@@ -58,6 +62,10 @@ body {
     padding-top: 70px;
     transition: background 0.3s, color 0.3s;
     background-color: var(--background);
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: var(--primary);
 }
 
