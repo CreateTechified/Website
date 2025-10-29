@@ -22,8 +22,8 @@
     --nav-dark: #333333;
 
     /*Background for both Light & Dark Mode*/
-    --bg-image-light: url("assets/gallery1.png");
-    --bg-image-dark: url("assets/gallery2.png");
+    --bg-image-light: url("assets/bg_light.png");
+    --bg-image-dark: url("assets/bg_dark.png");
 
     /* Default theme */
     --background: var(--bg-light);
