@@ -9,8 +9,6 @@
     --card-bg-light: #F2F2F2;
     --border-light: #DDDDDD;
     --nav-light: #F4F4F4;
-    --content-text-light: #FFFFFF;
-    --nav-text-light: #111111;
 
 
     /* Dark Mode Colors */
@@ -22,8 +20,6 @@
     --card-bg-dark: #2A2A2A;
     --border-dark: #444444;
     --nav-dark: #333333;
-    --content-text-light: #E0E0E0;
-    --nav-text-light: #B0B0B0;
 
     /*Background for both Light & Dark Mode*/
     --bg-image-light: url("assets/bg_light.png");
@@ -39,8 +35,6 @@
     --border: var(--border-light);
     --nav: var(--nav-light);
     --bg-image: var(--bg-image-light);
-    --content-text: var(--content-text-light);
-    --nav-text: var(--nav-text-light);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -54,8 +48,6 @@
         --border: var(--border-dark);
         --nav: var(--nav-dark);
         --bg-image: var(--bg-image-dark);
-        --content-text: var(--content-text-dark);
-        --nav-text: var(--nav-text-dark);
     }
 }
 
@@ -74,7 +66,7 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    color: var(--content-text);
+    color: var(--primary);
 }
 
 /* Navbar */
@@ -107,7 +99,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: var(--content-text);
+    color: var(--primary);
     font-size: 18px;
     font-weight: bold;
     padding: 8px 15px;
