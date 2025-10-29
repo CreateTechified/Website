@@ -54,6 +54,8 @@
         --border: var(--border-dark);
         --nav: var(--nav-dark);
         --bg-image: var(--bg-image-dark);
+        --content-text: var(--content-text-dark);
+        --nav-text: var(--nav-text-dark);
     }
 }
 
