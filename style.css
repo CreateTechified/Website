@@ -74,7 +74,7 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    color: var(--primary);
+    color: var(--content-text);
 }
 
 /* Navbar */
@@ -107,7 +107,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: var(--primary);
+    color: var(--content-text);
     font-size: 18px;
     font-weight: bold;
     padding: 8px 15px;
