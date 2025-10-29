@@ -9,6 +9,8 @@
     --card-bg-light: #F2F2F2;
     --border-light: #DDDDDD;
     --nav-light: #F4F4F4;
+    --content-text-light: #FFFFFF;
+    --nav-text-light: #111111;
 
 
     /* Dark Mode Colors */
@@ -20,6 +22,8 @@
     --card-bg-dark: #2A2A2A;
     --border-dark: #444444;
     --nav-dark: #333333;
+    --content-text-light: #333333;
+    --nav-text-light: #111111;
 
     /*Background for both Light & Dark Mode*/
     --bg-image-light: url("assets/bg_light.png");
