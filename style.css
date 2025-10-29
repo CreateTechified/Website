@@ -39,6 +39,8 @@
     --border: var(--border-light);
     --nav: var(--nav-light);
     --bg-image: var(--bg-image-light);
+    --content-text: var(--content-text-light);
+    --nav-text: var(--nav-text-light);
 }
 
 @media (prefers-color-scheme: dark) {
