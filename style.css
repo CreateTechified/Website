@@ -9,6 +9,8 @@
     --card-bg-light: #F2F2F2;
     --border-light: #DDDDDD;
     --nav-light: #F4F4F4;
+    --content-text-light: #222222;
+    --content-text-dark: #EAEAEA;
 
 
     /* Dark Mode Colors */
@@ -35,6 +37,7 @@
     --border: var(--border-light);
     --nav: var(--nav-light);
     --bg-image: var(--bg-image-light);
+    --content-text: var(--content-text-light);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -48,6 +51,11 @@
         --border: var(--border-dark);
         --nav: var(--nav-dark);
         --bg-image: var(--bg-image-dark);
+        --content-text: var(--content-text-dark);
+    }
+    .container {
+        background: none;
+        box-shadow: none;
     }
 }
 
@@ -85,6 +93,25 @@ button:hover {
     background-color: var(--link);
 }
 
+/* Content background box */
+.container {
+    background: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Soft blur behind text */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border-radius: 15px; /* Smooth edges */
+    padding: 20px 30px;
+    margin: 2rem auto;
+    max-width: 900px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3); /* Blended glow */
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.container p,
+.container h1,
+.container h2,
+.container h3 {
+    color: var(--content-text);
+}
 
 /* Navbar */
 nav {
@@ -168,5 +195,19 @@ nav ul li a:hover {
 
     .menu-toggle {
         display: block;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .container {
+        background: rgba(255, 255, 255, 0.6); /* soft translucent white */
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 15px;
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+        padding: 20px 30px;
+        margin: 2rem auto;
+        max-width: 900px;
+        transition: background 0.3s, box-shadow 0.3s;
     }
 }
