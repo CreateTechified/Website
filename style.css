@@ -212,12 +212,14 @@ nav ul li a:hover {
 footer {
     background: var(--nav);
     color: var(--primary);
-    padding: 20px 2vw;
-    text-align: center;
+    padding: 20px 30px;
+    text-align: left;
     position: relative;
     bottom: 0;
-    width: calc(100% - 4vw);
-    left: 2vw;
+    width: fit-content;
+    max-width: 900px;
+    margin-left: 2rem;
+    margin-top: 2rem;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-top: 1px solid var(--border);
