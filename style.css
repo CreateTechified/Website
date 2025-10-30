@@ -58,7 +58,6 @@
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
-        border-radius: 15px;
     }
 }
 
@@ -98,18 +97,15 @@ button:hover {
 
 /* Content background box */
 .container {
-    background: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 20px 30px;
-    margin: 2rem 0 2rem 2rem; /* top/right/bottom/left — pushes from top and left */
+    margin: 2rem 0 2rem 2rem; /* left-aligned layout */
     max-width: 900px;
-    width: 90%; /* takes most of the screen width */
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    width: 90%;
+    text-align: left;
     transition: background 0.3s, box-shadow 0.3s;
-    text-align: left; /* ensures text alignment */
 }
+
 
 .container p,
 .container h1,
@@ -205,14 +201,9 @@ nav ul li a:hover {
 
 @media (prefers-color-scheme: light) {
     .container {
-        background: rgba(255, 255, 255, 0.6); /* soft translucent white */
+        background: rgba(255, 255, 255, 0.6);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        border-radius: 15px;
         box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-        padding: 20px 30px;
-        margin: 2rem auto;
-        max-width: 900px;
-        transition: background 0.3s, box-shadow 0.3s;
     }
 }
