@@ -216,8 +216,8 @@ footer {
     text-align: center;
     position: relative;
     bottom: 0;
-    left: 0;
-    width: 100%;
+    left: -2vw;
+    width: calc(100% + 2vw);
     margin: 0;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
