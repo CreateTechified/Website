@@ -1,3 +1,18 @@
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+
 /* Theme detection */
 :root {
     /* Light Mode Colors */
