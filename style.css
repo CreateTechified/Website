@@ -127,7 +127,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 3vw;
+    padding-right: 20px;
+    gap: 1rem;
 }
 
 /* Navigation Links */
@@ -268,8 +269,34 @@ footer {
   transform: scale(1.05);
 }
 
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* ===================================== */
+/* MANUAL THEME SWITCH SUPPORT */
+/* ===================================== */
+
+/* Force Light Theme */
+:root[data-theme='light'] {
+  --background: var(--bg-light);
+  --primary: var(--text-primary-light);
+  --secondary: var(--text-secondary-light);
+  --link: var(--link-light);
+  --accent: var(--accent-light);
+  --card: var(--card-bg-light);
+  --border: var(--border-light);
+  --nav: var(--nav-light);
+  --bg-image: var(--bg-image-light);
+  --content-text: var(--content-text-light);
+}
+
+/* Force Dark Theme */
+:root[data-theme='dark'] {
+  --background: var(--bg-dark);
+  --primary: var(--text-primary-dark);
+  --secondary: var(--text-secondary-dark);
+  --link: var(--link-dark);
+  --accent: var(--accent-dark);
+  --card: var(--card-bg-dark);
+  --border: var(--border-dark);
+  --nav: var(--nav-dark);
+  --bg-image: var(--bg-image-dark);
+  --content-text: var(--content-text-dark);
 }
