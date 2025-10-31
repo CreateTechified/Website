@@ -68,8 +68,7 @@ body {
     font-weight: 400;
     font-style: normal;
     margin: 0;
-    padding-left: 2vw;
-    padding-top: 70px;
+    padding: 70px 0 0 0;
     transition: background 0.3s, color 0.3s;
     background-color: var(--background);
     background-image: var(--bg-image);
