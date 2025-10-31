@@ -3,16 +3,38 @@
   {% include heads.html %}
   <body>
     <header>
-      <div id="navbar"></div>
+      <nav> 
+        <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+
+        <ul id="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="https://legacy.curseforge.com/minecraft/modpacks/create-techified">Downloads</a></li>
+          <li><a href="/server">Server Info</a></li>
+          <li><a href="/changelog">Changelog</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/other_projects">Other Projects</a></li>
+          <li><a href="/team">Team</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+
+        <button id="theme-toggle" class="theme-toggle">🌓 System</button>
+      </nav>
     </header>
     <main>
       {{ content }}
     </main>
-    <script>
-      fetch("navbar.html")
-        .then((response) => response.text())
-        .then((data) => (document.getElementById("navbar").innerHTML = data));
-    </script>
+    <footer>
+      <div class="footer-content">
+        <p>© 2025 Create Techified — All rights reserved.</p>
+        <div class="footer-links">
+          <a href="/downloads.html">Downloads</a>
+          <a href="/resources.html">Resources</a>
+          <a href="/community.html">Community</a>
+          <a href="/contact.html">Contact</a>
+        </div>
+      </div>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>

@@ -1,14 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // --- Load Navbar ---
-    fetch('navbar.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('navbar').innerHTML = data;
-            setTimeout(() => {
-                setupMenuToggle(); 
-                setupThemeToggle(); // Initialize theme button
-            }, 100);
-        });
+    // --- Initialize Navbar ---
+    setupMenuToggle(); 
+    setupThemeToggle(); // Initialize theme button
 });
 
 // --- MOBILE MENU TOGGLE --- //
