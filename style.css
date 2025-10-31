@@ -63,22 +63,20 @@
 
 /* General Styles */
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* ensures page fills the screen */
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
     margin: 0;
     padding-left: 2vw;
     padding-top: 70px;
-    font-family: "Exo 2", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+    transition: background 0.3s, color 0.3s;
     background-color: var(--background);
     background-image: var(--bg-image);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     color: var(--primary);
-    transition: background 0.3s, color 0.3s;
 }
 
 /* Button Styles */
@@ -216,7 +214,10 @@ footer {
     color: var(--primary);
     padding: 20px 0;
     text-align: center;
-    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: -2vw;
+    width: calc(100% + 2vw);
     margin: 0;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -247,8 +248,4 @@ footer {
 
 .footer-links a:hover {
     color: var(--accent);
-}
-
-main {
-    flex: 1;
 }
