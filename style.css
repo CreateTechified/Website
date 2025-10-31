@@ -59,6 +59,9 @@
         -webkit-backdrop-filter: blur(10px);
         box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
     }
+    .button {
+    background: var(--accent);
+    }
 }
 
 /* General Styles */
@@ -79,7 +82,7 @@ body {
 }
 
 /* Button Styles */
-.button a {
+.button {
   display: inline-block;
   background: var(--accent);
   color: white;
@@ -87,17 +90,16 @@ body {
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  transition: background 0.3s, transform 0.2s;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  margin-top: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-.button a:hover {
+.button:hover {
   background: var(--link);
   transform: scale(1.05);
-}
-
-.button {
-  list-style: none;
-  margin: 10px 0;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -212,6 +214,9 @@ nav ul li a:hover {
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    }
+    .button {
+    background: var(--link);
     }
 }
 
