@@ -116,19 +116,19 @@ button:hover {
 
 /* Navbar */
 nav {
-    background: var(--nav);
-    padding: 10px 30px;
-    position: fixed;
-    width: calc(100% - 2vw);
-    top: 0;
-    left: 2vw;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    box-sizing: border-box;
+  background: var(--nav);
+  padding: 10px 30px;
+  position: fixed;
+  width: 100%; /* full width */
+  top: 0;
+  left: 0; /* remove offset */
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  box-sizing: border-box;
 }
 
 /* Navigation Links */
