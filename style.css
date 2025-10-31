@@ -358,11 +358,13 @@ img:hover {
 /* ===================================== */
 .carousel {
   position: relative;
-  max-width: 700px;
-  margin: 2rem auto;
+  max-width: 100%;
+  width: 100%;
   overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .carousel img {
@@ -381,19 +383,24 @@ img:hover {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.4);
-  border: none;
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  font-size: 2rem;
+  border: none;
   padding: 10px;
-  border-radius: 50%;
+  border-radius: 50%; /* makes it a circle */
   cursor: pointer;
-  transition: background 0.3s;
+  font-size: 20px;
   z-index: 10;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
 }
 
 .carousel-btn:hover {
-  background: rgba(0,0,0,0.6);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .carousel-btn.prev {
