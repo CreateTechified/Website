@@ -358,8 +358,11 @@ img:hover {
 /* ===================================== */
 .carousel {
   position: relative;
-  max-width: 100%;
-  width: 100%;
+  width: 100vw; /* full viewport width */
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw; /* centers it perfectly */
+  margin-right: -50vw;
   overflow: hidden;
   border-radius: 12px;
   display: flex;
@@ -369,9 +372,9 @@ img:hover {
 
 .carousel img {
   width: 100%;
-  display: none;
-  border-radius: 10px;
-  transition: opacity 0.5s ease-in-out;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
 .carousel img.active {
@@ -409,4 +412,12 @@ img:hover {
 
 .carousel-btn.next {
   right: 10px;
+}
+
+@media (max-width: 768px) {
+  .carousel-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
 }
