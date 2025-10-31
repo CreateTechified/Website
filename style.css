@@ -214,10 +214,7 @@ footer {
     color: var(--primary);
     padding: 20px 0;
     text-align: center;
-    position: relative;
-    bottom: 0;
-    left: -2vw;
-    width: calc(100% + 2vw);
+    width: 100%;
     margin: 0;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -248,4 +245,8 @@ footer {
 
 .footer-links a:hover {
     color: var(--accent);
+}
+
+main {
+    flex: 1;
 }
