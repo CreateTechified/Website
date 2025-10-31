@@ -358,11 +358,9 @@ img:hover {
 /* ===================================== */
 .carousel {
   position: relative;
-  width: 100vw; /* full viewport width */
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw; /* centers it perfectly */
-  margin-right: -50vw;
+  width: 100%;
+  max-width: 900px;
+  margin: 2rem auto;
   overflow: hidden;
   border-radius: 12px;
   display: flex;
@@ -375,6 +373,7 @@ img:hover {
   height: auto;
   display: block;
   object-fit: cover;
+  border-radius: 12px;
 }
 
 .carousel img.active {
@@ -386,32 +385,28 @@ img:hover {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+  background: var(--accent);
   border: none;
-  padding: 10px;
-  border-radius: 50%; /* makes it a circle */
-  cursor: pointer;
+  color: white;
   font-size: 20px;
-  z-index: 10;
   width: 40px;
   height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.2s ease;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .carousel-btn:hover {
-  background-color: rgba(0, 0, 0, 0.7);
+  background: var(--link);
+  transform: translateY(-50%) scale(1.1);
 }
 
 .carousel-btn.prev {
-  left: 10px;
+  left: 15px;
 }
 
 .carousel-btn.next {
-  right: 10px;
+  right: 15px;
 }
 
 @media (max-width: 768px) {
