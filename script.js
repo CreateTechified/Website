@@ -80,44 +80,62 @@ function setupThemeToggle() {
 
 // --- IMAGE CAROUSEL --- //
 function setupCarousel() {
-  const carousels = document.querySelectorAll(".carousel");
-  carousels.forEach((carousel) => {
-    // avoid initializing the same carousel multiple times
-    if (carousel.dataset.initialized === "1") return;
-    carousel.dataset.initialized = "1";
+    const carousels = document.querySelectorAll(".carousel");
+    carousels.forEach((carousel) => {
+        // Avoid initializing twice
+        if (carousel.dataset.initialized === "1") return;
+        carousel.dataset.initialized = "1";
 
-    const images = Array.from(carousel.querySelectorAll("img"));
-    if (!images.length) return; // nothing to do
+        const images = Array.from(carousel.querySelectorAll("img"));
+        if (!images.length) return;
 
-    // try both naming conventions to be resilient
-    const prevBtn = carousel.querySelector(".carousel-btn.prev") || carousel.querySelector(".prev");
-    const nextBtn = carousel.querySelector(".carousel-btn.next") || carousel.querySelector(".next");
+        const prevBtn = carousel.querySelector(".carousel-btn.prev") || carousel.querySelector(".prev");
+        const nextBtn = carousel.querySelector(".carousel-btn.next") || carousel.querySelector(".next");
+        const dotsContainer = carousel.querySelector(".dots");
 
-    let index = 0;
+        let index = 0;
 
-    function showImage(i) {
-      images.forEach((img, idx) => {
-        img.classList.toggle("active", idx === i);
-        // ensure CSS fallback if active class isn't set/used
-        img.style.display = idx === i ? "block" : "none";
-      });
-    }
+        // Create dots dynamically
+        if (dotsContainer) {
+            images.forEach((_, i) => {
+                const dot = document.createElement("span");
+                dot.classList.add("dot");
+                dot.addEventListener("click", () => {
+                    index = i;
+                    showImage(index);
+                });
+                dotsContainer.appendChild(dot);
+            });
+        }
 
-    function nextImage() {
-      index = (index + 1) % images.length;
-      showImage(index);
-    }
+        const dots = dotsContainer ? Array.from(dotsContainer.querySelectorAll(".dot")) : [];
 
-    function prevImage() {
-      index = (index - 1 + images.length) % images.length;
-      showImage(index);
-    }
+        function showImage(i) {
+            images.forEach((img, idx) => {
+                img.classList.toggle("active", idx === i);
+                img.style.display = idx === i ? "block" : "none";
+            });
 
-    // Attach handlers if buttons exist
-    if (prevBtn) prevBtn.addEventListener("click", prevImage);
-    if (nextBtn) nextBtn.addEventListener("click", nextImage);
+            if (dots.length) {
+                dots.forEach((dot, idx) => {
+                    dot.classList.toggle("active", idx === i);
+                });
+            }
+        }
 
-    // show first
-    showImage(index);
-  });
+        function nextImage() {
+            index = (index + 1) % images.length;
+            showImage(index);
+        }
+
+        function prevImage() {
+            index = (index - 1 + images.length) % images.length;
+            showImage(index);
+        }
+
+        if (prevBtn) prevBtn.addEventListener("click", prevImage);
+        if (nextBtn) nextBtn.addEventListener("click", nextImage);
+
+        showImage(index);
+    });
 }
