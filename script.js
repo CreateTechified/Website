@@ -1,4 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // --- Load Navbar ---
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+            setTimeout(() => {
+                setupMenuToggle(); 
+                setupThemeToggle(); // Initialize theme button
+                setupCarousel(); // Initialize carousel
+            }, 100);
+        });
     // --- Initialize Navbar ---
     setupMenuToggle(); 
     setupThemeToggle(); // Initialize theme button
@@ -67,7 +78,7 @@ function setupThemeToggle() {
 }
 
 // --- IMAGE CAROUSEL --- //
-document.addEventListener("DOMContentLoaded", () => {
+function setupCarousel() {
     const carousels = document.querySelectorAll(".carousel");
 
     carousels.forEach((carousel) => {
@@ -95,4 +106,4 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
     });
-});
+}
