@@ -388,20 +388,21 @@ img:hover {
 .carousel {
   position: relative;
   width: 100%;
-  max-width: 900px;
+  max-width: 100%;
   margin: 2rem auto;
   overflow: hidden;
   border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .carousel img {
   width: 100%;
   height: auto;
-  display: none;
-  object-fit: cover;
+  display: block;
+  object-fit: contain;
   border-radius: 12px;
 }
 
@@ -412,10 +413,11 @@ img:hover {
 
 .container .carousel {
   width: 100%;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
   border-radius: 12px;
   overflow: hidden;
   position: relative;
+  box-sizing: border-box;
 }
 
 .carousel-btn {
