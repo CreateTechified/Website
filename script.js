@@ -10,6 +10,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 setupCarousel(); // Initialize carousel
             }, 100);
         });
+    // --- Initialize Navbar ---
+    setupMenuToggle(); 
+    setupThemeToggle(); // Initialize theme button
+    setupCarousel(); // Initialize carousel
 });
 
 // --- MOBILE MENU TOGGLE --- //
