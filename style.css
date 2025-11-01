@@ -411,9 +411,8 @@ img:hover {
 }
 
 .container .carousel {
-  width: calc(100% + 40px); /* accounts for 20px padding on each side */
-  margin-left: -20px;
-  margin-right: -20px;
+  width: 100%;
+  margin: 1rem 0;
   border-radius: 12px;
   overflow: hidden;
   position: relative;
