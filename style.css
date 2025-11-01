@@ -363,7 +363,7 @@ footer {
 /* Universal Image Frame Styling */
 /* ===================================== */
 
-img.gallery {
+img {
   display: block;
   max-width: 100%;
   height: auto;
@@ -376,7 +376,7 @@ img.gallery {
   margin: 1rem 0;
 }
 
-img.gallery:hover {
+img:hover {
   transform: scale(1.02);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
