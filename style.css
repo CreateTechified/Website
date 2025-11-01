@@ -487,3 +487,18 @@ img:hover {
 .dot.active {
   background-color: white;
 }
+
+.carousel-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 6px transparent;
+}
+
+.carousel-dots span.active {
+  background: var(--link);
+  transform: scale(1.4);
+  box-shadow: 0 0 10px var(--link);
+}
