@@ -80,31 +80,44 @@ function setupThemeToggle() {
 
 // --- IMAGE CAROUSEL --- //
 function setupCarousel() {
-    const carousels = document.querySelectorAll(".carousel");
+  const carousels = document.querySelectorAll(".carousel");
+  carousels.forEach((carousel) => {
+    // avoid initializing the same carousel multiple times
+    if (carousel.dataset.initialized === "1") return;
+    carousel.dataset.initialized = "1";
 
-    carousels.forEach((carousel) => {
-        const images = carousel.querySelectorAll("img");
-        const prevBtn = carousel.querySelector(".prev");
-        const nextBtn = carousel.querySelector(".next");
-        let index = 0;
+    const images = Array.from(carousel.querySelectorAll("img"));
+    if (!images.length) return; // nothing to do
 
-        function showImage(i) {
-            images.forEach(img => img.classList.remove("active"));
-            images[i].classList.add("active");
-        }
+    // try both naming conventions to be resilient
+    const prevBtn = carousel.querySelector(".carousel-btn.prev") || carousel.querySelector(".prev");
+    const nextBtn = carousel.querySelector(".carousel-btn.next") || carousel.querySelector(".next");
 
-        showImage(index);
+    let index = 0;
 
-        if (prevBtn && nextBtn) {
-            prevBtn.addEventListener("click", () => {
-                index = (index - 1 + images.length) % images.length;
-                showImage(index);
-            });
+    function showImage(i) {
+      images.forEach((img, idx) => {
+        img.classList.toggle("active", idx === i);
+        // ensure CSS fallback if active class isn't set/used
+        img.style.display = idx === i ? "block" : "none";
+      });
+    }
 
-            nextBtn.addEventListener("click", () => {
-                index = (index + 1) % images.length;
-                showImage(index);
-            });
-        }
-    });
+    function nextImage() {
+      index = (index + 1) % images.length;
+      showImage(index);
+    }
+
+    function prevImage() {
+      index = (index - 1 + images.length) % images.length;
+      showImage(index);
+    }
+
+    // Attach handlers if buttons exist
+    if (prevBtn) prevBtn.addEventListener("click", prevImage);
+    if (nextBtn) nextBtn.addEventListener("click", nextImage);
+
+    // show first
+    showImage(index);
+  });
 }

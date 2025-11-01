@@ -389,7 +389,7 @@ img:hover {
   position: relative;
   width: 100%;
   max-width: 100%;
-  margin: 2rem auto;
+  margin: 1.5rem auto;
   overflow: hidden;
   border-radius: 12px;
   display: flex;
@@ -404,23 +404,30 @@ img:hover {
   display: block;
   object-fit: contain;
   border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.carousel img {
+  display: none;
 }
 
 .carousel img.active {
   display: block;
-  opacity: 1;
 }
 
 .container .carousel {
   width: 100%;
-  margin: 1.5rem 0;
+  margin-left: 0;
+  margin-right: 0;
   border-radius: 12px;
   overflow: hidden;
   position: relative;
   box-sizing: border-box;
 }
 
-.carousel-btn {
+.carousel-btn,
+.carousel .prev,
+.carousel .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -432,26 +439,28 @@ img:hover {
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  transition: background 0.25s, transform 0.15s;
+  z-index: 20; /* make sure buttons are above framed image */
 }
 
-.carousel-btn:hover {
+.carousel-btn:hover,
+.carousel .prev:hover,
+.carousel .next:hover {
   background: var(--link);
-  transform: translateY(-50%) scale(1.1);
+  transform: translateY(-50%) scale(1.05);
 }
 
-.carousel-btn.prev {
-  left: 15px;
-}
-
-.carousel-btn.next {
-  right: 15px;
-}
+.carousel-btn.prev,
+.carousel .prev { left: 12px; }
+.carousel-btn.next,
+.carousel .next { right: 12px; }
 
 @media (max-width: 768px) {
-  .carousel-btn {
-    width: 35px;
-    height: 35px;
+  .carousel-btn,
+  .carousel .prev,
+  .carousel .next {
+    width: 36px;
+    height: 36px;
     font-size: 18px;
   }
 }
