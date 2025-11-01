@@ -62,7 +62,7 @@
     .button {
     background: var(--accent);
     }
-    img.gallery {
+    img {
     background: rgba(0, 0, 0, 0.4);
     border: 2px solid var(--accent);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
@@ -477,4 +477,10 @@ img.gallery:hover {
 
 .dot.active {
   background-color: white;
+}
+
+img.no-style {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
 }
