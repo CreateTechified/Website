@@ -398,7 +398,7 @@ img:hover {
 .carousel img {
   width: auto;
   height: 100%;
-  display: block;
+  display: none;
   object-fit: contain;
   border: none;
   padding: 0;
