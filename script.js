@@ -1,15 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // --- Load Navbar ---
-    fetch('navbar.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('navbar').innerHTML = data;
-            setTimeout(() => {
-                setupMenuToggle(); 
-                setupThemeToggle(); // Initialize theme button
-                setupCarousel(); // Initialize carousel
-            }, 100);
-        });
     // --- Initialize Navbar ---
     setupMenuToggle(); 
     setupThemeToggle(); // Initialize theme button
@@ -18,7 +7,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // --- MOBILE MENU TOGGLE --- //
 function toggleMenu() {
-    document.getElementById("nav-links").classList.toggle("active");
+    const navLinks = document.getElementById("nav-links");
+    if (navLinks) {
+        navLinks.classList.toggle("active");
+    }
 }
 
 function setupMenuToggle() {
