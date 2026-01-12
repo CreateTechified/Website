@@ -588,7 +588,7 @@ img.no-style {
 
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(176, 176, 176);
+  box-shadow: 0 8px 20px rgba(100, 100, 100);
   border-color: var(--link);
 }
 
